@@ -86,6 +86,7 @@ nav {
 
 .navbar-shopping-cart {    
     position: relative;
+    cursor: pointer;
 }
 
 .navbar-shopping-cart div {    
@@ -228,8 +229,151 @@ nav {
     margin-top: 60px;
 }
 
+/* shopping cart and product detail */
+.product-detail {
+    position: absolute;
+    right: 0;
+    top: 61px;
+    width: 384px;
+    height: max-content;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px #0000001f;
+    border-radius: 0px 0 40px 40px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header .icon {
+    margin-left: 24px;
+    margin-right: 20px;
+}
+
+.header .title {
+    font-size: var(--lg);
+    font-weight: bold;
+}
+
+.shopping-cart {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.shopping-cart figure {
+    margin: 10px 10px 10px 0px;
+    position: relative;
+    box-shadow: 0px 0px 3px 0.1px #00000059;
+    border-radius: 18px;
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+}
+
+.shopping-cart figure img {
+    padding: 8px;
+    width: 60px;
+    height: 60px;
+}
+
+.shopping-cart p:nth-child(2) {
+    font-size: var(--sm);
+    color: #797979;
+    width: 100px;
+}
+
+.shopping-cart p:nth-child(3) {
+    font-size: var(--sm);
+    color: var(--black);
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.total {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 24px;
+    margin-left: 24px;
+    background: var(--text-input-field);
+    border-radius: 8px;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: -15px;
+    font-weight: bold;
+    font-size: var(--sm);
+}
+
+.info {
+    margin: 30px 24px 0px 24px;
+}
+
+.info .add-cart-button {
+    padding: 10px;
+    display: flex;
+    background: var(--hospital-green);
+    color: var(--white);
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 0px;
+    border-radius: 8px;
+    font-size: var(--lg);
+    margin-bottom: 35px;
+}
+
+
+/* Product list */
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 30px;
+    place-content: center;
+}
+.product-card{
+    width: 240px;
+}
+.product-card img{
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.product-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 4px;
+}
+.product-info div p:nth-child(1){
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+.product-info div p:nth-child(2){
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.product-info figure{
+    margin: 0px;
+}
+.product-info figure img{
+    width: 35px;
+    height: 35px;
+}
+
+
 /* Responsive */
-@media (max-width: 952px) {
+@media (max-width: 980px) {
     
     .menu {
         cursor: pointer;
@@ -252,9 +396,65 @@ nav {
     .desktop-menu{
         display: none;
     }
+
+    /* aside shopping cart and produt */
+
+    .product-detail {
+        position: absolute;
+        top: 46px;
+        width: 100%;
+        height: 93.5%;
+        box-shadow: none;
+    }
+
+        .info {
+        display: flex;
+        margin: 0px 24px 0px 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-detail .headphones {
+        height: max-content;
+    }
+
+    .info p {
+        margin-top: 0px;
+    }
+
+    .info .add-cart-button {
+        position: absolute;
+        padding: 10px;
+        margin: 24px;
+        bottom: 0px;
+        width: -webkit-fill-available;
+    }
+
+    .total {
+        position: absolute;
+        padding: 10px;
+        margin: 24px;
+        bottom: 70px;
+        width: -webkit-fill-available;
+    }
+
+    /* product list */
+    .cards-container{
+        grid-template-columns: repeat(auto-fill, 140px);
+        gap: 30px;
+    }
+    .product-card{
+        width: 140px;
+    }
+    .product-card img{
+        width: 140px;
+        height: 140px;
+    }
+
 }
 
-@media (min-width: 952px) {
+@media (min-width: 980px) {
     .mobile-menu{
         display: none;
     }
